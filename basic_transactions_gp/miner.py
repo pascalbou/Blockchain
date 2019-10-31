@@ -38,8 +38,7 @@ def valid_proof(block_string, proof):
     # set a guess
     guess = f'{block_string}{proof}'.encode()
     # hash the guess
-    # guess_hash = hashlib.sha256(guess).hexdigest()
-    guess_hash = hashlib.blake2b(guess).hexdigest()
+    guess_hash = hashlib.sha256(guess).hexdigest()
     # return guess validity
     return guess_hash[:6] == "000000"
 
